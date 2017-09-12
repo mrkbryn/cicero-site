@@ -13,3 +13,43 @@ export const setDataInputMethod = inputMethod => {
         inputMethod
     };
 };
+
+export const SET_MAX_ALLOWABLE_CONTEXT_SIZE = 'SET_MAX_ALLOWABLE_CONTEXT_SIZE';
+export const setMaxAllowableContextSize = mS => {
+    return {
+        type: SET_MAX_ALLOWABLE_CONTEXT_SIZE,
+        mS
+    };
+};
+
+export const SET_MAX_ALLOWABLE_NUMERICAL_DOMAIN_WIDTH = 'SET_MAX_ALLOWABLE_NUMERICAL_DOMAIN_WIDTH';
+export const setMaxAllowableNumericalDomainWidth = mW => {
+    return {
+        type: SET_MAX_ALLOWABLE_NUMERICAL_DOMAIN_WIDTH,
+        mW
+    };
+};
+
+export const SET_MAX_ALLOWABLE_CATEGORICAL_DOMAIN_SIZE = 'SET_MAX_ALLOWABLE_CATEGORICAL_DOMAIN_SIZE';
+export const setMaxAllowableCategoricalDomainSize = mC => {
+    return {
+        type: SET_MAX_ALLOWABLE_CATEGORICAL_DOMAIN_SIZE,
+        mC
+    };
+};
+
+export const SET_TIMEOUT = 'SET_TIMEOUT';
+export const setTimeout = timeout => {
+    return {
+        type: SET_TIMEOUT,
+        timeout
+    };
+};
+
+export const SET_EPSILON = 'SET_EPSILON';
+export const setEpsilon = epsilon => {
+    return {
+        type: SET_EPSILON,
+        epsilon
+    };
+};

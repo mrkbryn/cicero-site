@@ -1,10 +1,22 @@
 import { connect } from 'react-redux';
-import { setAlgorithm } from '../actions';
+import {
+    setAlgorithm,
+    setMaxAllowableContextSize,
+    setMaxAllowableNumericalDomainWidth,
+    setMaxAllowableCategoricalDomainSize,
+    setTimeout,
+    setEpsilon,
+} from '../actions';
 import AlgorithmConfigPanelComponent from '../components/AlgorithmConfigPanelComponent';
 
 const mapStateToProps = state => {
     return {
         algorithm: state.algorithm,
+        maxAllowableContextSize: state.maxAllowableContextSize,
+        maxAllowableNumericalDomainWidth: state.maxAllowableNumericalDomainWidth,
+        maxAllowableCategoricalDomainWidth: state.maxAllowableCategoricalDomainWidth,
+        timeout: state.timeout,
+        epsilon: state.epsilon,
         options: ['naive', 'greedy-FANTOM', 'hybrid']
     }
 }
@@ -14,22 +26,22 @@ const mapDispatchToProps = dispatch => {
         setAlgorithm: algorithm => {
             dispatch(setAlgorithm(algorithm));
         },
-        setMaxAllowableContextSize: () => {
-            // TODO
+        setMaxAllowableContextSize: mS => {
+            dispatch(setMaxAllowableContextSize(mS));
         },
-        setMaxAllowableNumericalDomainWidth: () => {
-            // TODO
+        setMaxAllowableNumericalDomainWidth: mW => {
+            dispatch(setMaxAllowableNumericalDomainWidth(mW));
         },
-        setMaxAllowableCategoricalDomainSize: () => {
-            // TODO
+        setMaxAllowableCategoricalDomainSize: mC => {
+            dispatch(setMaxAllowableCategoricalDomainSize(mC));
         },
-        setTimeout: () => {
-            // TODO
+        setTimeout: timeout => {
+            dispatch(setTimeout(timeout));
         },
-        setEpsilon: () => {
-            // TODO
+        setEpsilon: epsilon => {
+            dispatch(setEpsilon(epsilon));
         }
-    }
+    };
 }
 
 const AlgorithmConfigPanel = connect(
