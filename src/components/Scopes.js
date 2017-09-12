@@ -10,17 +10,17 @@ function Scopes(props) {
         var headers = Object.keys((ContextTuples.context || {}).valueDomains || {});
         headers.forEach((header) => {
           context[header] = context[header] || new Set();
-          ContextTuples.tuples.map((row) => {
-            Object.entries(row).map((tuple) => {
-              if (tuple[0] == header) context[header].add(tuple[1]);
+          ContextTuples.tuples.forEach((row) => {
+            Object.entries(row).forEach((tuple) => {
+              if (tuple[0] === header) context[header].add(tuple[1]);
             });
           });
           context[header] = context[header] = Array.from(context[header]).join(', ');
         });
         var rows = ContextTuples.tuples.map((row) => {
           var filteredRow = {};
-          Object.entries(row).map((tuple) => {
-            if (headers.indexOf(tuple[0]) == -1)
+          Object.entries(row).forEach((tuple) => {
+            if (headers.indexOf(tuple[0]) === -1)
               filteredRow[tuple[0]] = tuple[1];
           });
           return filteredRow;

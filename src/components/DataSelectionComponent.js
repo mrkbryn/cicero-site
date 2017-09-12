@@ -1,0 +1,54 @@
+import React from 'react';
+import {
+    FormGroup,
+    ControlLabel,
+    FormControl,
+    Panel,
+    Nav,
+    NavItem,
+} from 'react-bootstrap';
+
+/**
+ * Renders a form for a user to specify the test data. Test data
+ * can be submitted by specifying a raw SQL query or by specifying
+ * the data in CSV format.
+ */
+class DataSelectionComponent extends React.Component {
+    constructor(props) {
+        super()
+    }
+
+    handleSelect(eventKey) {
+        this.props.setDataInputMethod(eventKey);
+    }
+
+    render() {
+        let props = this.props;
+        return (
+            <Panel header="Data Selection">
+                <Nav
+                    bsStyle="tabs"
+                    activeKey={props.dataInputMethod}
+                    onSelect={inputMethod => props.setDataInputMethod(inputMethod)}
+                >
+                    <NavItem eventKey="sqlQuery">SQL Query</NavItem>
+                    <NavItem eventKey="csvData">CSV Data</NavItem>
+                </Nav>
+                <FormGroup>
+                    <ControlLabel>CSV Header</ControlLabel>
+                    <FormControl type="text" />
+                </FormGroup>
+                <FormGroup>
+                    <ControlLabel>CSV Body</ControlLabel>
+                    <FormControl componentClass="textArea" rows="5" />
+                </FormGroup>
+                <FormGroup>
+                    <ControlLabel>SQL Query</ControlLabel>
+                    <FormControl type="text" />
+                </FormGroup>
+            </Panel>
+        );
+    }
+}
+
+export default DataSelectionComponent;
