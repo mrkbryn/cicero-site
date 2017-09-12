@@ -4,7 +4,7 @@ import DataSelectionComponent from '../components/DataSelectionComponent';
 
 const mapStateToProps = state => {
     return {
-        dataInputMethod: state.dataInputType
+        dataInputMethod: state.dataInputMethod
     }
 }
 
