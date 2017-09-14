@@ -66,6 +66,6 @@ La Masseria,4.3,high,Italian
 Dos Caminos,4.0,high,Mexican
 `
     },
-};
+}
 
-export {CsvData};
+export {CsvData}

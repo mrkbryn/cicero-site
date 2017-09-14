@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { setDataInputMethod } from '../actions';
-import DataSelectionComponent from '../components/DataSelectionComponent';
+import { connect } from 'react-redux'
+import { setDataInputMethod } from '../actions'
+import DataSelectionComponent from '../components/DataSelectionComponent'
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         setDataInputMethod: inputType => {
-            dispatch(setDataInputMethod(inputType));
+            dispatch(setDataInputMethod(inputType))
         }
     }
 }
@@ -19,6 +19,6 @@ const mapDispatchToProps = dispatch => {
 const DataSelectionContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(DataSelectionComponent);
+)(DataSelectionComponent)
 
-export default DataSelectionContainer;
+export default DataSelectionContainer

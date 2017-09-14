@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import {
     setAlgorithm,
     setMaxAllowableContextSize,
@@ -6,8 +6,8 @@ import {
     setMaxAllowableCategoricalDomainSize,
     setTimeout,
     setEpsilon,
-} from '../actions';
-import AlgorithmConfigPanelComponent from '../components/AlgorithmConfigPanelComponent';
+} from '../actions'
+import AlgorithmConfigPanelComponent from '../components/AlgorithmConfigPanelComponent'
 
 const mapStateToProps = state => {
     return {
@@ -24,29 +24,29 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         setAlgorithm: algorithm => {
-            dispatch(setAlgorithm(algorithm));
+            dispatch(setAlgorithm(algorithm))
         },
         setMaxAllowableContextSize: mS => {
-            dispatch(setMaxAllowableContextSize(mS));
+            dispatch(setMaxAllowableContextSize(mS))
         },
         setMaxAllowableNumericalDomainWidth: mW => {
-            dispatch(setMaxAllowableNumericalDomainWidth(mW));
+            dispatch(setMaxAllowableNumericalDomainWidth(mW))
         },
         setMaxAllowableCategoricalDomainSize: mC => {
-            dispatch(setMaxAllowableCategoricalDomainSize(mC));
+            dispatch(setMaxAllowableCategoricalDomainSize(mC))
         },
         setTimeout: timeout => {
-            dispatch(setTimeout(timeout));
+            dispatch(setTimeout(timeout))
         },
         setEpsilon: epsilon => {
-            dispatch(setEpsilon(epsilon));
+            dispatch(setEpsilon(epsilon))
         }
-    };
+    }
 }
 
 const AlgorithmConfigPanel = connect(
     mapStateToProps,
     mapDispatchToProps
-)(AlgorithmConfigPanelComponent);
+)(AlgorithmConfigPanelComponent)
 
-export default AlgorithmConfigPanel;
+export default AlgorithmConfigPanel

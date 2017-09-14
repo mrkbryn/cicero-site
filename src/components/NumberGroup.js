@@ -1,5 +1,5 @@
-import React from 'react';
-import { FormGroup, ControlLabel, InputGroup, FormControl, HelpBlock } from 'react-bootstrap';
+import React from 'react'
+import { FormGroup, ControlLabel, InputGroup, FormControl, HelpBlock } from 'react-bootstrap'
 
 function NumberGroup({ id, label, help, suffix, ...props }) {
   return (
@@ -11,7 +11,7 @@ function NumberGroup({ id, label, help, suffix, ...props }) {
       </InputGroup>
       {help && <HelpBlock>{help}</HelpBlock>}
     </FormGroup>
-  );
-};
+  )
+}
 
-export default NumberGroup;
+export default NumberGroup

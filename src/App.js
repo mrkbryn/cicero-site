@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import {
   PageHeader,
   Button
-} from 'react-bootstrap';
-import TestResult from './components/TestResult';
-import AlgorithmConfigPanel from './containers/AlgorithmConfigPanel';
-import DataSelectionContainer from './containers/DataSelectionContainer';
+} from 'react-bootstrap'
+import TestResult from './components/TestResult'
+import AlgorithmConfigPanel from './containers/AlgorithmConfigPanel'
+import DataSelectionContainer from './containers/DataSelectionContainer'
 
 class App extends Component {
   render() {
@@ -21,8 +21,8 @@ class App extends Component {
           <TestResult />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,12 +1,12 @@
-import React from 'react';
-import { Panel } from 'react-bootstrap';
-import NumberGroup from './NumberGroup';
-import FieldGroup from './FieldGroup';
-import SelectGroup from './SelectGroup';
+import React from 'react'
+import { Panel } from 'react-bootstrap'
+import NumberGroup from './NumberGroup'
+import FieldGroup from './FieldGroup'
+import SelectGroup from './SelectGroup'
 
 class AlgorithmConfigPanelComponent extends React.Component {
     render() {
-        let props = this.props;
+        let props = this.props
         return (
             <Panel header="Algorithm Selection">
                 <SelectGroup
@@ -60,8 +60,8 @@ class AlgorithmConfigPanelComponent extends React.Component {
                     </div>
                 }
             </Panel>
-        );
+        )
     }
 }
 
-export default AlgorithmConfigPanelComponent;
+export default AlgorithmConfigPanelComponent

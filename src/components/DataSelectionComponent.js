@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
     FormGroup,
     ControlLabel,
@@ -7,7 +7,7 @@ import {
     Nav,
     NavItem,
     Row,
-} from 'react-bootstrap';
+} from 'react-bootstrap'
 
 /**
  * Renders a form for a user to specify the test data. Test data
@@ -16,7 +16,7 @@ import {
  */
 class DataSelectionComponent extends React.Component {
     render() {
-        let props = this.props;
+        let props = this.props
         return (
             <Panel header="Data Selection">
                 <Row>
@@ -50,8 +50,8 @@ class DataSelectionComponent extends React.Component {
                     </div>
                 }
             </Panel>
-        );
+        )
     }
 }
 
-export default DataSelectionComponent;
+export default DataSelectionComponent
