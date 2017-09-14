@@ -1,7 +1,11 @@
 import React from 'react'
-import { Panel } from 'react-bootstrap'
+import {
+    Panel,
+    Col,
+    Row,
+    ControlLabel,
+} from 'react-bootstrap'
 import NumberGroup from './NumberGroup'
-import FieldGroup from './FieldGroup'
 import SelectGroup from './SelectGroup'
 
 class AlgorithmConfigPanelComponent extends React.Component {
@@ -11,7 +15,7 @@ class AlgorithmConfigPanelComponent extends React.Component {
             <Panel header="Algorithm Selection">
                 <SelectGroup
                     label="Select algorithm"
-                    options={["naive", "greedy-FANTOM", ""]}
+                    options={["naive", "greedy-FANTOM", "hybrid"]}
                     defaultValue={props.algorithm}
                     onChange={e => props.setAlgorithm(e.target.value)}
                 />
@@ -25,27 +29,41 @@ class AlgorithmConfigPanelComponent extends React.Component {
                 />
                 {props.algorithm !== "naive" &&
                     <div>
-                        <FieldGroup
-                            label="Maximum allowable context size"
-                            help="The number of domains the algorithm is allowed to fix for tuples"
-                            type="number"
-                            value={props.maxAllowableContextSize}
-                            onChange={e => props.setMaxAllowableContextSize(e.target.value)}
-                        />
-                        <FieldGroup
-                            label="Maximum allowable numerical domain width"
-                            help="The factor by which the upper bound is greater than the lower bound for numerical domains (mW)"
-                            type="number"
-                            value={props.maxAllowableNumericalDomainWidth}
-                            onChange={e => props.setMaxAllowableNumericalDomainWidth(e.target.value)}
-                        />
-                        <FieldGroup
-                            label="Maximum allowable categorical domain size"
-                            help="The maximum number of categorical values allowed to be fixed in a domain (mC)"
-                            type="number"
-                            value={props.maxAllowableCategoricalDomainSize}
-                            onChange={e => props.setMaxAllowableCategoricalDomainSize(e.target.value)}
-                        />
+                        <Row>
+                            <Col md="4">
+                                <ControlLabel>Amount of context for each grouping of tuples (maximum context size)</ControlLabel>
+                                <input
+                                    type="range"
+                                    min="1"
+                                    max="4"
+                                    step="1"
+                                    value={props.maxAllowableContextSize}
+                                    onChange={e => props.setMaxAllowableContextSize(e.target.value)}
+                                />
+                            </Col>
+                            <Col md="4">
+                                <ControlLabel>Number of values allowed for a categorical domain (maximum categorical domain size)</ControlLabel>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="4"
+                                    step="1"
+                                    value={props.maxAllowableCategoricalDomainSize}
+                                    onChange={e => props.setMaxAllowableCategoricalDomainSize(e.target.value)}
+                                />
+                            </Col>
+                            <Col md="4">
+                                <ControlLabel>Size of range for numerical context (maximum numerical domain width)</ControlLabel>
+                                <input
+                                    type="range"
+                                    min="1.0"
+                                    max="4.0"
+                                    step="0.5"
+                                    value={props.setMaxAllowableNumericalDomainWidth}
+                                    onChange={e => props.setMaxAllowableNumericalDomainWidth(e.target.value)}
+                                />
+                            </Col>
+                        </Row>
                     </div>
                 }
                 {this.props.algorithm === "greedy-FANTOM" &&
