@@ -17,7 +17,6 @@ class App extends Component {
           <AlgorithmConfigPanel />
           <DataSelectionContainer />
           <Button>Run Test</Button>
-          <h2>Test Results</h2>
           <TestResult />
         </div>
       </div>

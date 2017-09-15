@@ -7,6 +7,7 @@ import {
 } from 'react-bootstrap'
 import NumberGroup from './NumberGroup'
 import SelectGroup from './SelectGroup'
+import InfoButton from './InfoButton'
 
 class AlgorithmConfigPanelComponent extends React.Component {
     render() {
@@ -30,7 +31,7 @@ class AlgorithmConfigPanelComponent extends React.Component {
                 {props.algorithm !== "naive" &&
                     <div>
                         <Row>
-                            <Col md="4">
+                            <Col md={4}>
                                 <ControlLabel>Amount of context for each grouping of tuples (maximum context size)</ControlLabel>
                                 <input
                                     type="range"
@@ -40,8 +41,9 @@ class AlgorithmConfigPanelComponent extends React.Component {
                                     value={props.maxAllowableContextSize}
                                     onChange={e => props.setMaxAllowableContextSize(e.target.value)}
                                 />
+                                <InfoButton />
                             </Col>
-                            <Col md="4">
+                            <Col md={4}>
                                 <ControlLabel>Number of values allowed for a categorical domain (maximum categorical domain size)</ControlLabel>
                                 <input
                                     type="range"
@@ -51,8 +53,9 @@ class AlgorithmConfigPanelComponent extends React.Component {
                                     value={props.maxAllowableCategoricalDomainSize}
                                     onChange={e => props.setMaxAllowableCategoricalDomainSize(e.target.value)}
                                 />
+                                <InfoButton />
                             </Col>
-                            <Col md="4">
+                            <Col md={4}>
                                 <ControlLabel>Size of range for numerical context (maximum numerical domain width)</ControlLabel>
                                 <input
                                     type="range"
@@ -62,6 +65,7 @@ class AlgorithmConfigPanelComponent extends React.Component {
                                     value={props.setMaxAllowableNumericalDomainWidth}
                                     onChange={e => props.setMaxAllowableNumericalDomainWidth(e.target.value)}
                                 />
+                                <InfoButton />
                             </Col>
                         </Row>
                     </div>
@@ -75,6 +79,7 @@ class AlgorithmConfigPanelComponent extends React.Component {
                             value={props.epsilon}
                             onChange={e => props.setEpsilon(e.target.value)}
                         />
+                        <InfoButton />
                     </div>
                 }
             </Panel>
