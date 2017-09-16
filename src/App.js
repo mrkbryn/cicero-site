@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import {
   PageHeader,
-  Button
+  Button,
+  FormGroup,
 } from 'react-bootstrap'
-import TestResult from './components/TestResult'
+import TestResultContainer from './containers/TestResultContainer'
 import AlgorithmConfigPanel from './containers/AlgorithmConfigPanel'
 import DataSelectionContainer from './containers/DataSelectionContainer'
 
@@ -16,8 +17,10 @@ class App extends Component {
           <PageHeader>CiceroDB <small>Optimizing Voice Output of Relational Data</small></PageHeader>
           <AlgorithmConfigPanel />
           <DataSelectionContainer />
-          <Button>Run Test</Button>
-          <TestResult />
+          <FormGroup>
+            <Button bsStyle="primary" bsSize="large">Run Test</Button>
+          </FormGroup>
+          <TestResultContainer />
         </div>
       </div>
     )

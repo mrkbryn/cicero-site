@@ -76,7 +76,9 @@ const dataInputMethod = (state = 'sqlQuery', action) => {
 
 const testResultFetch = (state = {
     isFetching: false,
-    testResult: {}
+    testResult: {
+        longFormResult: 'Restaurants with medium or high price: Collegetown Bagels'
+    }
 }, action) => {
     switch (action.type) {
         case REQUEST_TEST_RESULT:
