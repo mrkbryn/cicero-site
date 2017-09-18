@@ -6,20 +6,15 @@ import {
     ControlLabel,
 } from 'react-bootstrap'
 import NumberGroup from './NumberGroup'
-import SelectGroup from './SelectGroup'
 import InfoButton from './InfoButton'
+import AlgorithmSelectionBar from '../containers/AlgorithmSelectionBar'
 
 class AlgorithmConfigPanelComponent extends React.Component {
     render() {
         let props = this.props
         return (
             <Panel header="Algorithm Selection">
-                <SelectGroup
-                    label="Select algorithm"
-                    options={["naive", "greedy-FANTOM", "hybrid"]}
-                    defaultValue={props.algorithm}
-                    onChange={e => props.setAlgorithm(e.target.value)}
-                />
+                <AlgorithmSelectionBar />
                 <NumberGroup
                     label="Timeout"
                     suffix="Sec"
