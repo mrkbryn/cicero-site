@@ -1,3 +1,5 @@
+export const RESTAURANTS_QUERY = 'SELECT restaurant, user_rating, price, cuisine FROM restaurants;'
+export const MACBOOKS_QUERY_1 = 'SELECT model, gigabytes_of_memory, dollars FROM macbooks;'
 
 const CsvData = {
     football: {
