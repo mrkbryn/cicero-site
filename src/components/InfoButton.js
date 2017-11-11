@@ -8,7 +8,10 @@ import {
 
 const InfoButton = (props) => {
     let overlay = (
-        <Popover title={props.title}>
+        <Popover 
+            title={props.title}
+            id={props.id}
+        >
             {props.helpText}
         </Popover>
     )
