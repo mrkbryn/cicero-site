@@ -5,7 +5,6 @@ import {
     SET_MAX_ALLOWABLE_CONTEXT_SIZE,
     SET_MAX_ALLOWABLE_NUMERICAL_DOMAIN_WIDTH,
     SET_MAX_ALLOWABLE_CATEGORICAL_DOMAIN_SIZE,
-    SET_TIMEOUT,
     SET_EPSILON,
     REQUEST_TEST_RESULT,
     RECEIVE_TEST_RESULT,
@@ -42,15 +41,6 @@ const maxAllowableCategoricalDomainSize = (state = 2, action) => {
     switch (action.type) {
         case SET_MAX_ALLOWABLE_CATEGORICAL_DOMAIN_SIZE:
             return action.mC
-        default:
-            return state
-    }
-}
-
-const timeout = (state = 5, action) => {
-    switch (action.type) {
-        case SET_TIMEOUT:
-            return action.timeout
         default:
             return state
     }
@@ -100,7 +90,6 @@ const ciceroSite = combineReducers({
     maxAllowableContextSize,
     maxAllowableNumericalDomainWidth,
     maxAllowableCategoricalDomainSize,
-    timeout,
     epsilon,
     dataInputMethod,
     testResultFetch,

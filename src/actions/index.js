@@ -40,14 +40,6 @@ export const setMaxAllowableCategoricalDomainSize = mC => {
     }
 }
 
-export const SET_TIMEOUT = 'SET_TIMEOUT'
-export const setTimeout = timeout => {
-    return {
-        type: SET_TIMEOUT,
-        timeout
-    }
-}
-
 export const SET_EPSILON = 'SET_EPSILON'
 export const setEpsilon = epsilon => {
     return {

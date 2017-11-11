@@ -4,7 +4,6 @@ import {
     setMaxAllowableContextSize,
     setMaxAllowableNumericalDomainWidth,
     setMaxAllowableCategoricalDomainSize,
-    setTimeout,
     setEpsilon,
 } from '../actions'
 import AlgorithmConfigPanelComponent from '../components/AlgorithmConfigPanelComponent'
@@ -15,7 +14,6 @@ const mapStateToProps = state => {
         maxAllowableContextSize: state.maxAllowableContextSize,
         maxAllowableNumericalDomainWidth: state.maxAllowableNumericalDomainWidth,
         maxAllowableCategoricalDomainWidth: state.maxAllowableCategoricalDomainWidth,
-        timeout: state.timeout,
         epsilon: state.epsilon,
         options: ['naive', 'greedy-FANTOM', 'hybrid']
     }
@@ -34,9 +32,6 @@ const mapDispatchToProps = dispatch => {
         },
         setMaxAllowableCategoricalDomainSize: mC => {
             dispatch(setMaxAllowableCategoricalDomainSize(mC))
-        },
-        setTimeout: timeout => {
-            dispatch(setTimeout(timeout))
         },
         setEpsilon: epsilon => {
             dispatch(setEpsilon(epsilon))

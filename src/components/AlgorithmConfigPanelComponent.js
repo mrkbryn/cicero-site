@@ -15,14 +15,6 @@ class AlgorithmConfigPanelComponent extends React.Component {
         return (
             <Panel header="Algorithm Selection">
                 <AlgorithmSelectionBar />
-                <NumberGroup
-                    label="Timeout"
-                    suffix="Sec"
-                    help="Timeout before defaulting to a naive result"
-                    type="number"
-                    value={props.timeout}
-                    onChange={e => props.setTimeout(e.target.value)}
-                />
                 {props.algorithm !== "naive" &&
                     <div>
                         <Row>
